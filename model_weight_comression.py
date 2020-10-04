@@ -97,67 +97,8 @@ xx = sess.run(tv)
 X = sess.run(tf.expand_dims(tf.concat([tf.reshape(x,[-1]) for x in tf.trainable_variables()], axis = 0), axis = -1))
 # len(xx)
 from sklearn.cluster import KMeans
-kmeans = KMeans(n_clusters=50, random_state=0).fit(X)
+kmeans = KMeans(n_clusters=7000, random_state=0).fit(X)
 pdb.set_trace()  
-
-
-with tf.Session() as sess:
-# new_saver = tf.train.import_meta_graph("/home/perrryosa/Speech-Denoising-With-RNN/q2model/my_rnn_model.meta")
-    new_saver=tf.train.Saver(max_to_keep=0)
-    # new_saver.restore(sess, tf.train.latest_checkpoint('./'))
-
-    # new_saver.restore(sess,tf.train.latest_checkpoint('/home/perrryosa/Speech-Denoising-With-RNN/result multilayer/q2model/'))
-
-    new_saver.restore(sess,'/home/perrryosa/Speech-Denoising-With-RNN/dataset_generate/wind_dataset_IITGN/pink_wind_dataset/test_pink_wind/model/bi_LSTM_stft_pink_wind_IITGN')
-    print(tf.trainable_variables())
-    pdb.set_trace()
-    # print_tensors_in_checkpoint_file("/home/perrryosa/Speech-Denoising-With-RNN/q2model/new_data_apple/combined_loss/CRNN_stft", all_tensors=False, tensor_name='')
-    # with tf.variable_scope("rnn_out", reuse=True):
-    #     w = tf.get_variable("kernel")
-    #     tf.Print(w, [w])
-        # Also tried tf.Print(hidden_layer2, [w])
-
-    # pdb.set_trace()
-    # a = np.arange(0,100)
-    # b=[]
-    # for i in range(len(a)):
-    #     b.append(str(a[i]))
-    # b.sort()
-    # # pdb.set_trace()
-
-    # # SNR = ['0', '10', '5', 'm5']
-    # data_path =  '/home/perrryosa/Speech-Denoising-With-RNN/dataset_generate/wind_dataset_IITGN/pink_wind_dataset/test_pink_wind' 
-    # #dftest=os.listdir('/home/perrryosa/Speech-Denoising-With-RNN/new_data_apple/validation')
-    # dftest=os.listdir('/home/perrryosa/Speech-Denoising-With-RNN/dataset_generate/wind_dataset_IITGN/pink_wind_dataset/test_pink_wind/noisy')
-    # dftest.sort()
-    # tex, TEX, TEX_abs, TEX_len,phase = loadfile(data_path,dftest, 'noisy', flag = 1)
-    # print(len(phase), phase[0].shape)
-    # def test_SNR(M_pred, X, i):
-    #     S_pred = M_pred.T
-    #     s_pred = librosa.istft(S_pred, win_length = 512, hop_length = 257)
-    #     print('writing audios...')
-    #     # librosa.output.write_wav('/home/perrryosa/Speech-Denoising-With-RNN/QANTAS-1-Channel/recovered/recovered'
-    #     #  + str(i) + '.wav', s_pred, 16000)
-    #     print(s_pred.shape)
-    #     wavfile.write('/home/perrryosa/Speech-Denoising-With-RNN/dataset_generate/wind_dataset_IITGN/pink_wind_dataset/test_pink_wind/denoised/recovered_S_' 
-    #      + b[i] + '.wav', 16000, s_pred)
-    #     # librosa.output.write_wav('/home/perrryosa/Speech-Denoising-With-RNN/test_result/denoised'+str(i)+'.wav', s_pred, 16000)
-
-
-    # #Getting predictions for all test sets
-    # for i in range(len(TEX_abs)):
-    #     print(i)
-    #     epoch_x = np.zeros((1, TEX_abs[i].shape[1], TEX_abs[i].shape[0]))
-    #     epoch_y = np.zeros((1, TEX_abs[i].shape[1], TEX_abs[i].shape[0]))
-    #     epoch_x[0,:,:] = TEX_abs[i].T
-    #     # print(epoch_x)
-    #     epoch_x = np.reshape(epoch_x,(1,TEX_len[i],257))
-    #     TEM_pred= sess.run(rnn_out, feed_dict = {q2_x:epoch_x, seq_len : [TEX_len[i]] ,keep_pr: 1})
-    #     phase[i] = phase[i].T
-    #     phase[i] = np.reshape(phase[i],(1,TEX_len[i],257))
-    #     TEM_pred = TEM_pred*phase[i]
-    #     print(phase[i].shape,TEM_pred.shape)
-    #     test_SNR(TEM_pred[0,:TEX_len[i],:], TEX[i], i)
 
 
 sess.close()
