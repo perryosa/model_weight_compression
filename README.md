@@ -5,7 +5,9 @@ As asked to show one of the method for model compression. I am providing the cod
 Navigation for the Code :-
 
 1.Given architecture in the code is my own archtecture for speech enhancement. [Paper has been accepter for publication in IEEE Signal Processing Letters] So I have no prolem in sharing the code.
+\n
 2.Weights that I have used for showing the weight compression is also my model weights trained on mozilla speech corpus.
+\n
 3. After loading the model and model weights model compression code starts.
 
 
