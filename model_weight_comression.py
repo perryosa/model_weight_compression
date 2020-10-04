@@ -90,7 +90,7 @@ saver = tf.train.Saver()
 
 # CODE FOR MODEL COMPRESSION
 new_saver=tf.train.Saver(max_to_keep=0)
-new_saver.restore(sess,'/home/perrryosa/Speech-Denoising-With-RNN/dataset_generate/wind_dataset_IITGN/pink_wind_dataset/test_pink_wind/model/bi_LSTM_stft_pink_wind_IITGN')
+new_saver.restore(sess,"..Path to the model weights")
 # xx = tf.trainable_variables()
 tv = tf.trainable_variables()
 xx = sess.run(tv)
