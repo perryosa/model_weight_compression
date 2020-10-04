@@ -1,0 +1,2 @@
+model_checkpoint_path: "bi_LSTM_stft_pink_wind_IITGN"
+all_model_checkpoint_paths: "bi_LSTM_stft_pink_wind_IITGN"
